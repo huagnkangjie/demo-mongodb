@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: demo-4-mongodb
+  data:
+    mongodb:
+      uri: mongodb://172.16.30.145:27017/ows
+  datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      username: root
+      url: jdbc:mysql://172.16.30.145:3306/demo?useSSL=false&useUnicode=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT
+      password: goodsogood
+      driver-class-name: com.mysql.jdbc.Driver
+      hikari:
+            connection-test-query: SELECT 1 FROM DUAL
+            minimum-idle: 5
+            maximum-pool-size: 10
+            pool-name: hikari-jdbc-pool
+            idle-timeout: 30000
+            max-lifetime: 2000000
+            connection-timeout: 30000
+            register-mbeans: true
+logging:
+  level: debug
